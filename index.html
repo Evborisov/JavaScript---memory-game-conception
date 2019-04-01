@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flip game</title>
+
+    <style>
+        .html {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .board {
+            margin: 0 auto;
+            width: 810px;
+            height: 810px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+
+        /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+        .flip-card {
+            background-color: transparent;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #f1f1f1;
+            perspective: 1000px;
+        }
+
+        /* This container is needed to position the front and back side */
+        .flip-card-inner {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        /* Do an horizontal flip when you move the mouse over the flip box container  */
+        .flip-card-inner.flip {
+            transform: rotateY(180deg);
+        }
+
+
+        /* Position the front and back side */
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            backface-visibility: hidden;
+            line-height: 200px;
+        }
+
+        /* Style the front side (fallback if image is missing) */
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        /* Style the back side */
+        .flip-card-back {
+            background-color: dodgerblue;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        @media screen and (max-width: 800px) {
+            .board {
+                width: 410px;
+                height: 410px;
+
+
+            }
+
+            .flip-card-front,
+            .flip-card-back,
+            .flip-card-inner,
+            .flip-card {
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+            }
+
+        }
+
+        @media screen and (max-width: 420px) {
+            .board {
+                width: 290px;
+                height: 290px;
+
+            }
+
+            .flip-card-front,
+            .flip-card-back,
+            .flip-card-inner,
+            .flip-card {
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="board">
+
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">1</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">1</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">2</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">2</h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">3</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">3</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">4</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">4</h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">5</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">5</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">6</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">6</h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">7</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">7</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">8</h1>
+                </div>
+            </div>
+        </div>
+        <div id="flip-card" class="flip-card">
+            <div id="flip-card-inner" class="flip-card-inner">
+                <div class="flip-card-front">
+                </div>
+                <div id="flip-card-back" class="flip-card-back">
+                    <h1 id="num">8</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        let flippingCard = document.querySelectorAll(".flip-card");
+        let card = document.getElementById("flip-card-inner");
+        let cards = document.querySelectorAll(".flip-card-inner");
+
+
+
+
+
+
+        let hasFlippedCard = false;
+        let lockBoard = false;
+        let firstCard, secondCard;
+        let firstCard1, secondCard1;
+
+
+        function flipCard() {
+            if (lockBoard) return;
+            if (this === firstCard) return;
+
+            this.classList.add('flip');
+
+            if (!hasFlippedCard) {
+                hasFlippedCard = true;
+                firstCard = this;
+                console.log(firstCard);
+                firstCard1 = parseInt(firstCard.children[1].children[0].innerHTML);
+
+                return;
+
+
+            }
+
+            secondCard = this;
+            secondCard1 = parseInt(secondCard.children[1].children[0].innerHTML);
+            lockBoard = true;
+            console.log(firstCard1, secondCard1);
+            checkForMatch();
+
+        }
+
+        function checkForMatch() {
+            let isMatch = (firstCard1 == secondCard1);
+            isMatch ? disableCards() : unflipCards();
+            console.log(isMatch);
+        }
+
+
+        function disableCards() {
+            firstCard.removeEventListener('click', flipCard);
+            secondCard.removeEventListener('click', flipCard);
+            firstCard.children[1].children[0].style.background = "green";
+            secondCard.children[1].children[0].style.background = "green";
+
+            resetBoard();
+        }
+
+        function unflipCards() {
+            setTimeout(() => {
+                firstCard.classList.remove('flip');
+                secondCard.classList.remove('flip');
+
+
+                resetBoard();
+            }, 1500);
+        }
+
+        function resetBoard() {
+            [hasFlippedCard, lockBoard] = [false, false];
+            [firstCard, secondCard] = [null, null];
+        }
+
+        (function shuffle() {
+            flippingCard.forEach(flippingCard => {
+                let ramdomPos = Math.floor(Math.random() * 16);
+                flippingCard.style.order = ramdomPos;
+            });
+        })();
+
+        cards.forEach(card => card.addEventListener('click', flipCard));
+    </script>
+
+</body>
+
+</html>
